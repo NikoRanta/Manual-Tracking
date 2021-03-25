@@ -140,9 +140,9 @@ if __name__ == '__main__':
         
         def update_contrast(self,*args):
             #if Initiated_Contrast_Check.get() == 1:
-            print('adjusting line')
-            print(f'Lower: {Lower_Contrast_Value.get()}, Upper: {Upper_Contrast_Value.get()}')
-            print(f'Lower: {Lower_Contrast_Slider.get()}, Upper: {Upper_Contrast_Slider.get()}')
+            #print('adjusting line')
+            #print(f'Lower: {Lower_Contrast_Value.get()}, Upper: {Upper_Contrast_Value.get()}')
+            #print(f'Lower: {Lower_Contrast_Slider.get()}, Upper: {Upper_Contrast_Slider.get()}')
             self.line_removed = self.Contrast_Drawn_Lines.pop(0)
             self.line_removed.remove()
             del self.line_removed
@@ -252,7 +252,7 @@ if __name__ == '__main__':
             
             
             if self.scrolled == 0:
-                print(f'Checkbox: {Contrast_Button_Checkbox_value.get()}, Prior: {Contrast_Button_Checkbox_value_Prior.get()}, Contrast Button: {Contrast_Button_Check.get()}, Auto Contrast: {Auto_Contrast_Pressed.get()}')
+                #print(f'Checkbox: {Contrast_Button_Checkbox_value.get()}, Prior: {Contrast_Button_Checkbox_value_Prior.get()}, Contrast Button: {Contrast_Button_Check.get()}, Auto Contrast: {Auto_Contrast_Pressed.get()}')
                 if Contrast_Button_Checkbox_value.get() == 0:
                     self.im.set_data(self.X[self.time_displayed,:, :, self.ind])
                 if Contrast_Button_Checkbox_value_Prior.get() == 1:
@@ -340,10 +340,8 @@ if __name__ == '__main__':
         wb.close()
     
     def Move_Page():
-        Times_On_Pages_To_Display.set(int(int(int(Times_of_Interest.get()))-First_Time_Entry_Displayed.get()+1))
+        Times_On_Pages_To_Display.set(int(Times_of_Interest.get())-int(First_Time_Entry_Displayed.get())+1)
         
-        
-        gap = 28
         t_1.set(int(First_Time_Entry_Displayed.get()))
         t_2.set(int(First_Time_Entry_Displayed.get()+1))
         t_3.set(int(First_Time_Entry_Displayed.get()+2))
@@ -357,56 +355,56 @@ if __name__ == '__main__':
         if Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()-1,4] == 0:
             t1_checked.set('No')
         
-        t1_label_canvas = canvas1.create_window(50,entry1_spacing.get()*gap,window=t1_label)
-        t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get()*gap,window=t1_entry)
-        x1_label_canvas = canvas1.create_window(95,entry1_spacing.get()*gap,window=x1_label)
-        x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get()*gap,window=x1_entry)
-        y1_label_canvas = canvas1.create_window(155,entry1_spacing.get()*gap,window=y1_label)
-        y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get()*gap,window=y1_entry)
-        z1_label_canvas = canvas1.create_window(215,entry1_spacing.get()*gap,window=z1_label)
-        z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get()*gap,window=z1_entry)
-        t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get()*gap,window=t1checked_label)
-        t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get()*gap,window=t1checked_entry)
-        t2_label_canvas = canvas1.create_window(50,entry2_spacing.get()*gap,window=t2_label)
-        t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get()*gap,window=t2_entry)
-        x2_label_canvas = canvas1.create_window(95,entry2_spacing.get()*gap,window=x2_label)
-        x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get()*gap,window=x2_entry)
-        y2_label_canvas = canvas1.create_window(155,entry2_spacing.get()*gap,window=y2_label)
-        y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get()*gap,window=y2_entry)
-        z2_label_canvas = canvas1.create_window(215,entry2_spacing.get()*gap,window=z2_label)
-        z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get()*gap,window=z2_entry)
-        t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get()*gap,window=t2checked_label)
-        t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get()*gap,window=t2checked_entry)
-        t3_label_canvas = canvas1.create_window(50,entry3_spacing.get()*gap,window=t3_label)
-        t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get()*gap,window=t3_entry)
-        x3_label_canvas = canvas1.create_window(95,entry3_spacing.get()*gap,window=x3_label)
-        x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get()*gap,window=x3_entry)
-        y3_label_canvas = canvas1.create_window(155,entry3_spacing.get()*gap,window=y3_label)
-        y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get()*gap,window=y3_entry)
-        z3_label_canvas = canvas1.create_window(215,entry3_spacing.get()*gap,window=z3_label)
-        z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get()*gap,window=z3_entry)
-        t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get()*gap,window=t3checked_label)
-        t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get()*gap,window=t3checked_entry)
-        t4_label_canvas = canvas1.create_window(50,entry4_spacing.get()*gap,window=t4_label)
-        t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get()*gap,window=t4_entry)
-        x4_label_canvas = canvas1.create_window(95,entry4_spacing.get()*gap,window=x4_label)
-        x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get()*gap,window=x4_entry)
-        y4_label_canvas = canvas1.create_window(155,entry4_spacing.get()*gap,window=y4_label)
-        y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get()*gap,window=y4_entry)
-        z4_label_canvas = canvas1.create_window(215,entry4_spacing.get()*gap,window=z4_label)
-        z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get()*gap,window=z4_entry)
-        t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get()*gap,window=t4checked_label)
-        t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get()*gap,window=t4checked_entry)
-        t5_label_canvas = canvas1.create_window(50,entry5_spacing.get()*gap,window=t5_label)
-        t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get()*gap,window=t5_entry)
-        x5_label_canvas = canvas1.create_window(95,entry5_spacing.get()*gap,window=x5_label)
-        x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get()*gap,window=x5_entry)
-        y5_label_canvas = canvas1.create_window(155,entry5_spacing.get()*gap,window=y5_label)
-        y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get()*gap,window=y5_entry)
-        z5_label_canvas = canvas1.create_window(215,entry5_spacing.get()*gap,window=z5_label)
-        z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get()*gap,window=z5_entry)
-        t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get()*gap,window=t5checked_label)
-        t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get()*gap,window=t5checked_entry)
+        t1_label_canvas = canvas1.create_window(50,entry1_spacing.get(),window=t1_label)
+        t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get(),window=t1_entry)
+        x1_label_canvas = canvas1.create_window(95,entry1_spacing.get(),window=x1_label)
+        x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get(),window=x1_entry)
+        y1_label_canvas = canvas1.create_window(155,entry1_spacing.get(),window=y1_label)
+        y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get(),window=y1_entry)
+        z1_label_canvas = canvas1.create_window(215,entry1_spacing.get(),window=z1_label)
+        z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get(),window=z1_entry)
+        t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get(),window=t1checked_label)
+        t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get(),window=t1checked_entry)
+        t2_label_canvas = canvas1.create_window(50,entry2_spacing.get(),window=t2_label)
+        t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get(),window=t2_entry)
+        x2_label_canvas = canvas1.create_window(95,entry2_spacing.get(),window=x2_label)
+        x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get(),window=x2_entry)
+        y2_label_canvas = canvas1.create_window(155,entry2_spacing.get(),window=y2_label)
+        y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get(),window=y2_entry)
+        z2_label_canvas = canvas1.create_window(215,entry2_spacing.get(),window=z2_label)
+        z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get(),window=z2_entry)
+        t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get(),window=t2checked_label)
+        t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get(),window=t2checked_entry)
+        t3_label_canvas = canvas1.create_window(50,entry3_spacing.get(),window=t3_label)
+        t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get(),window=t3_entry)
+        x3_label_canvas = canvas1.create_window(95,entry3_spacing.get(),window=x3_label)
+        x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get(),window=x3_entry)
+        y3_label_canvas = canvas1.create_window(155,entry3_spacing.get(),window=y3_label)
+        y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get(),window=y3_entry)
+        z3_label_canvas = canvas1.create_window(215,entry3_spacing.get(),window=z3_label)
+        z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get(),window=z3_entry)
+        t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get(),window=t3checked_label)
+        t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get(),window=t3checked_entry)
+        t4_label_canvas = canvas1.create_window(50,entry4_spacing.get(),window=t4_label)
+        t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get(),window=t4_entry)
+        x4_label_canvas = canvas1.create_window(95,entry4_spacing.get(),window=x4_label)
+        x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get(),window=x4_entry)
+        y4_label_canvas = canvas1.create_window(155,entry4_spacing.get(),window=y4_label)
+        y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get(),window=y4_entry)
+        z4_label_canvas = canvas1.create_window(215,entry4_spacing.get(),window=z4_label)
+        z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get(),window=z4_entry)
+        t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get(),window=t4checked_label)
+        t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get(),window=t4checked_entry)
+        t5_label_canvas = canvas1.create_window(50,entry5_spacing.get(),window=t5_label)
+        t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get(),window=t5_entry)
+        x5_label_canvas = canvas1.create_window(95,entry5_spacing.get(),window=x5_label)
+        x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get(),window=x5_entry)
+        y5_label_canvas = canvas1.create_window(155,entry5_spacing.get(),window=y5_label)
+        y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get(),window=y5_entry)
+        z5_label_canvas = canvas1.create_window(215,entry5_spacing.get(),window=z5_label)
+        z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get(),window=z5_entry)
+        t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get(),window=t5checked_label)
+        t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get(),window=t5checked_entry)
         canvas1.delete(t1_label_canvas)
         canvas1.delete(t1_entry_canvas)
         canvas1.delete(x1_label_canvas)
@@ -458,28 +456,28 @@ if __name__ == '__main__':
         canvas1.delete(t5checked_label_canvas)
         canvas1.delete(t5checked_entry_canvas)
         
-        t1_label_canvas = canvas1.create_window(50,entry1_spacing.get()*gap,window=t1_label)
-        t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get()*gap,window=t1_entry)
-        x1_label_canvas = canvas1.create_window(95,entry1_spacing.get()*gap,window=x1_label)
-        x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get()*gap,window=x1_entry)
-        y1_label_canvas = canvas1.create_window(155,entry1_spacing.get()*gap,window=y1_label)
-        y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get()*gap,window=y1_entry)
-        z1_label_canvas = canvas1.create_window(215,entry1_spacing.get()*gap,window=z1_label)
-        z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get()*gap,window=z1_entry)
-        t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get()*gap,window=t1checked_label)
-        t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get()*gap,window=t1checked_entry)
+        t1_label_canvas = canvas1.create_window(50,entry1_spacing.get(),window=t1_label)
+        t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get(),window=t1_entry)
+        x1_label_canvas = canvas1.create_window(95,entry1_spacing.get(),window=x1_label)
+        x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get(),window=x1_entry)
+        y1_label_canvas = canvas1.create_window(155,entry1_spacing.get(),window=y1_label)
+        y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get(),window=y1_entry)
+        z1_label_canvas = canvas1.create_window(215,entry1_spacing.get(),window=z1_label)
+        z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get(),window=z1_entry)
+        t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get(),window=t1checked_label)
+        t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get(),window=t1checked_entry)
         
         if Times_On_Pages_To_Display.get() > 1:
-            t2_label_canvas = canvas1.create_window(50,entry2_spacing.get()*gap,window=t2_label)
-            t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get()*gap,window=t2_entry)
-            x2_label_canvas = canvas1.create_window(95,entry2_spacing.get()*gap,window=x2_label)
-            x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get()*gap,window=x2_entry)
-            y2_label_canvas = canvas1.create_window(155,entry2_spacing.get()*gap,window=y2_label)
-            y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get()*gap,window=y2_entry)
-            z2_label_canvas = canvas1.create_window(215,entry2_spacing.get()*gap,window=z2_label)
-            z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get()*gap,window=z2_entry)
-            t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get()*gap,window=t2checked_label)
-            t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get()*gap,window=t2checked_entry)
+            t2_label_canvas = canvas1.create_window(50,entry2_spacing.get(),window=t2_label)
+            t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get(),window=t2_entry)
+            x2_label_canvas = canvas1.create_window(95,entry2_spacing.get(),window=x2_label)
+            x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get(),window=x2_entry)
+            y2_label_canvas = canvas1.create_window(155,entry2_spacing.get(),window=y2_label)
+            y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get(),window=y2_entry)
+            z2_label_canvas = canvas1.create_window(215,entry2_spacing.get(),window=z2_label)
+            z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get(),window=z2_entry)
+            t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get(),window=t2checked_label)
+            t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get(),window=t2checked_entry)
             x_2.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get(),1])
             y_2.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get(),2])
             z_2.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get(),3])
@@ -488,16 +486,16 @@ if __name__ == '__main__':
             if Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get(),4] == 0:
                 t2_checked.set('No')
         if Times_On_Pages_To_Display.get()>2:
-            t3_label_canvas = canvas1.create_window(50,entry3_spacing.get()*gap,window=t3_label)
-            t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get()*gap,window=t3_entry)
-            x3_label_canvas = canvas1.create_window(95,entry3_spacing.get()*gap,window=x3_label)
-            x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get()*gap,window=x3_entry)
-            y3_label_canvas = canvas1.create_window(155,entry3_spacing.get()*gap,window=y3_label)
-            y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get()*gap,window=y3_entry)
-            z3_label_canvas = canvas1.create_window(215,entry3_spacing.get()*gap,window=z3_label)
-            z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get()*gap,window=z3_entry)
-            t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get()*gap,window=t3checked_label)
-            t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get()*gap,window=t3checked_entry)
+            t3_label_canvas = canvas1.create_window(50,entry3_spacing.get(),window=t3_label)
+            t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get(),window=t3_entry)
+            x3_label_canvas = canvas1.create_window(95,entry3_spacing.get(),window=x3_label)
+            x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get(),window=x3_entry)
+            y3_label_canvas = canvas1.create_window(155,entry3_spacing.get(),window=y3_label)
+            y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get(),window=y3_entry)
+            z3_label_canvas = canvas1.create_window(215,entry3_spacing.get(),window=z3_label)
+            z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get(),window=z3_entry)
+            t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get(),window=t3checked_label)
+            t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get(),window=t3checked_entry)
             x_3.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+1,1])
             y_3.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+1,2])
             z_3.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+1,3])
@@ -506,16 +504,16 @@ if __name__ == '__main__':
             if Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+1,4] == 0:
                 t3_checked.set('No')
         if Times_On_Pages_To_Display.get() >3:
-            t4_label_canvas = canvas1.create_window(50,entry4_spacing.get()*gap,window=t4_label)
-            t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get()*gap,window=t4_entry)
-            x4_label_canvas = canvas1.create_window(95,entry4_spacing.get()*gap,window=x4_label)
-            x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get()*gap,window=x4_entry)
-            y4_label_canvas = canvas1.create_window(155,entry4_spacing.get()*gap,window=y4_label)
-            y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get()*gap,window=y4_entry)
-            z4_label_canvas = canvas1.create_window(215,entry4_spacing.get()*gap,window=z4_label)
-            z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get()*gap,window=z4_entry)
-            t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get()*gap,window=t4checked_label)
-            t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get()*gap,window=t4checked_entry)
+            t4_label_canvas = canvas1.create_window(50,entry4_spacing.get(),window=t4_label)
+            t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get(),window=t4_entry)
+            x4_label_canvas = canvas1.create_window(95,entry4_spacing.get(),window=x4_label)
+            x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get(),window=x4_entry)
+            y4_label_canvas = canvas1.create_window(155,entry4_spacing.get(),window=y4_label)
+            y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get(),window=y4_entry)
+            z4_label_canvas = canvas1.create_window(215,entry4_spacing.get(),window=z4_label)
+            z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get(),window=z4_entry)
+            t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get(),window=t4checked_label)
+            t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get(),window=t4checked_entry)
             x_4.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+2,1])
             y_4.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+2,2])
             z_4.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+2,3])
@@ -524,16 +522,16 @@ if __name__ == '__main__':
             if Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+2,4] == 0:
                 t4_checked.set('No')
         if Times_On_Pages_To_Display.get() >4:
-            t5_label_canvas = canvas1.create_window(50,entry5_spacing.get()*gap,window=t5_label)
-            t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get()*gap,window=t5_entry)
-            x5_label_canvas = canvas1.create_window(95,entry5_spacing.get()*gap,window=x5_label)
-            x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get()*gap,window=x5_entry)
-            y5_label_canvas = canvas1.create_window(155,entry5_spacing.get()*gap,window=y5_label)
-            y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get()*gap,window=y5_entry)
-            z5_label_canvas = canvas1.create_window(215,entry5_spacing.get()*gap,window=z5_label)
-            z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get()*gap,window=z5_entry)
-            t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get()*gap,window=t5checked_label)
-            t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get()*gap,window=t5checked_entry)
+            t5_label_canvas = canvas1.create_window(50,entry5_spacing.get(),window=t5_label)
+            t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get(),window=t5_entry)
+            x5_label_canvas = canvas1.create_window(95,entry5_spacing.get(),window=x5_label)
+            x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get(),window=x5_entry)
+            y5_label_canvas = canvas1.create_window(155,entry5_spacing.get(),window=y5_label)
+            y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get(),window=y5_entry)
+            z5_label_canvas = canvas1.create_window(215,entry5_spacing.get(),window=z5_label)
+            z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get(),window=z5_entry)
+            t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get(),window=t5checked_label)
+            t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get(),window=t5checked_entry)
             x_5.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+3,1])
             y_5.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+3,2])
             z_5.set(Particle_Locations[Particle_of_Focus.get(),First_Time_Entry_Displayed.get()+3,3])
@@ -596,36 +594,24 @@ if __name__ == '__main__':
                     pass
                     
     def Particle_Focus_Menu_Function():
-        article_Of_Focus_Label_Canvas = canvas1.create_window(450,y_input_spacing.get()*gap,window=Particle_Of_Focus_Label)
+        article_Of_Focus_Label_Canvas = canvas1.create_window(450,y_input_spacing.get(),window=Particle_Of_Focus_Label)
         Dic = {}
         for x in range(int(Number_Of_Particles_To_Track.get())):
             Dic[str(x+1)]=x+1
         Particle_Focus_Menu = OptionMenu(root,Particle_of_Focus_String,*Dic.keys())
-        Particle_Focus_Menu_Canvas = canvas1.create_window(550,y_input_spacing.get()*gap,window=Particle_Focus_Menu)
+        Particle_Focus_Menu_Canvas = canvas1.create_window(550,y_input_spacing.get(),window=Particle_Focus_Menu)
     
     def Launch_Window():
         begin_timer = timeit.default_timer()
         Window_Opened_Check.set(1)
         Launched_Window.set(1)
         plt.close('all')
-        global Phase_T,Phase_Z
-        if Organized_Files_Done.get() == 0:
-            if Derivative_Check_Variable.get() == 0:
-                global Organized_Files
-                Organized_Files = Organize_Folders()
-                global shape_of_arrays_0,shape_of_arrays_1
-                shape_of_arrays_0,shape_of_arrays_1 = np.array(io.imread(Organized_Files[0,0])).shape
-                Phase_T = np.zeros((int(Times_of_Interest.get()),Organized_Files.shape[0],shape_of_arrays_0,shape_of_arrays_1),'<f4')
-                Organized_Files_Done.set(1)
-                for t_slice in range(int(Times_of_Interest.get())):
-                    print(f'Building time slice #{t_slice+1} out of {int(Times_of_Interest.get())} ({np.round(timeit.default_timer() - begin_timer,3)} seconds)')
-                    Phase_T_slice = np.zeros((Organized_Files.shape[0],shape_of_arrays_0,shape_of_arrays_1))
-                    for z_slice in range(Organized_Files.shape[0]):
-                        Phase_T_slice[z_slice,:,:] = np.array(io.imread(Organized_Files[z_slice,t_slice]),'<f4')*100
-                    Phase_T[t_slice,:,:,:] = np.copy(Phase_T_slice)
-            if Derivative_Check_Variable.get() == 1:
-                Derivative_Image_Array = np.array(io.imread(Derivative_Input_File_Name.get()))
-                Organized_Files_Done.set(1)
+        if Input_Stack_Format.get() == 1 or Input_Hyperstack_Format.get() == 1:
+            global Organized_Files
+            Organized_Files = np.zeros((11,2))
+            Organized_Files[:,1] = np.arange(-50,60,10)
+            global shape_of_arrays_0,shape_of_arrays_1
+            shape_of_arrays_0,shape_of_arrays_1 = 100,100
             
             created_list = 0
             if created_list == 0:
@@ -633,19 +619,19 @@ if __name__ == '__main__':
                 global Particle_Locations
                 Particle_Locations = np.zeros((int(Number_Of_Particles_To_Track.get()),int(Times_of_Interest.get()),5))
                 Particle_Locations[:,:,0] = np.arange(int(Times_of_Interest.get()))+1
+                Total_Pages.set(np.ceil(int(Times_of_Interest.get())/5))
                 
             display_show = True
             if display_show:
                 Times_On_Pages_To_Display.set(int(int(Times_of_Interest.get())-First_Time_Entry_Displayed.get()+1))
                 
-                gap = 28
                 
                 if Times_On_Pages_To_Display.get()>5:
-                    Left_Arrow_Button_Canvas = canvas1.create_window(100,arrows_jumping_spacing.get()*gap,window=Left_Arrow_Button)
-                    Right_Arrow_Button_Canvas = canvas1.create_window(200,arrows_jumping_spacing.get()*gap,window=Right_Arrow_Button)
+                    Left_Arrow_Button_Canvas = canvas1.create_window(100,arrows_jumping_spacing.get(),window=Left_Arrow_Button)
+                    Right_Arrow_Button_Canvas = canvas1.create_window(200,arrows_jumping_spacing.get(),window=Right_Arrow_Button)
                 
-                    jump_to_label_canvas = canvas1.create_window(275,arrows_jumping_spacing.get()*gap,window=jump_to_label)
-                    jump_to_entry_canvas = canvas1.create_window(345,arrows_jumping_spacing.get()*gap,window=jump_to_entry)
+                    jump_to_label_canvas = canvas1.create_window(275,arrows_jumping_spacing.get(),window=jump_to_label)
+                    jump_to_entry_canvas = canvas1.create_window(345,arrows_jumping_spacing.get(),window=jump_to_entry)
                 if Times_On_Pages_To_Display.get()<6:
                     entry1_spacing.set(entry1_spacing.get()-1)
                     entry2_spacing.set(entry2_spacing.get()-1)
@@ -656,80 +642,222 @@ if __name__ == '__main__':
                 if int(Number_Of_Particles_To_Track.get()) > 1:
                     Particle_Focus_Menu_Function()
                     
-                Auto_Contrast_Button_Canvas = canvas1.create_window(200,open_window_spacing.get()*gap,window=Auto_Contrast_Button)
-                #Contrast_Adjust_Button_Canvas = canvas1.create_window(300,open_window_spacing.get()*gap,window=Contrast_Adjust_Button)
-                Contrast_Adjust_Checkbox_Button_Canvas = canvas1.create_window(350,open_window_spacing.get()*gap,window=Contrast_Adjust_Checkbox_Button)
+                Auto_Contrast_Button_Canvas = canvas1.create_window(200,open_window_spacing.get(),window=Auto_Contrast_Button)
+                #Contrast_Adjust_Button_Canvas = canvas1.create_window(300,open_window_spacing.get(),window=Contrast_Adjust_Button)
+                Contrast_Adjust_Checkbox_Button_Canvas = canvas1.create_window(350,open_window_spacing.get(),window=Contrast_Adjust_Checkbox_Button)
                 
-                missing_entries_label_canvas = canvas1.create_window(100,save_location_missing_spacing.get()*gap,window=missing_entries_label)
-                Missing_Entries_Entry_Canvas = canvas1.create_window(170,save_location_missing_spacing.get()*gap,window=Missing_Entries_Entry)
-                x_coordinate_label_canvas = canvas1.create_window(60,x_input_spacing.get()*gap,window=x_coordinate_label)
-                X_Coordinate_Entry_entry_canvas = canvas1.create_window(225,x_input_spacing.get()*gap,window=X_Coordinate_Entry)
-                y_coordinate_label_Canvas = canvas1.create_window(60,y_input_spacing.get()*gap,window=y_coordinate_label)
-                Y_Coordinate_Entry_canvas = canvas1.create_window(225,y_input_spacing.get()*gap,window=Y_Coordinate_Entry)
-                append_next_Button_Canvas = canvas1.create_window(120,set_val_spacing.get()*gap,window=append_next_Button)
-                Save_Output_Button_Canvas = canvas1.create_window(250,save_location_missing_spacing.get()*gap,window=Save_Output_Button)
+                missing_entries_label_canvas = canvas1.create_window(100,save_location_missing_spacing.get(),window=missing_entries_label)
+                Missing_Entries_Entry_Canvas = canvas1.create_window(170,save_location_missing_spacing.get(),window=Missing_Entries_Entry)
+                x_coordinate_label_canvas = canvas1.create_window(60,x_input_spacing.get(),window=x_coordinate_label)
+                X_Coordinate_Entry_entry_canvas = canvas1.create_window(225,x_input_spacing.get(),window=X_Coordinate_Entry)
+                y_coordinate_label_Canvas = canvas1.create_window(60,y_input_spacing.get(),window=y_coordinate_label)
+                Y_Coordinate_Entry_canvas = canvas1.create_window(225,y_input_spacing.get(),window=Y_Coordinate_Entry)
+                append_next_Button_Canvas = canvas1.create_window(120,set_val_spacing.get(),window=append_next_Button)
+                Save_Output_Button_Canvas = canvas1.create_window(250,save_location_missing_spacing.get(),window=Save_Output_Button)
                 
-                t1_label_canvas = canvas1.create_window(50,entry1_spacing.get()*gap,window=t1_label)
-                t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get()*gap,window=t1_entry)
-                x1_label_canvas = canvas1.create_window(95,entry1_spacing.get()*gap,window=x1_label)
-                x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get()*gap,window=x1_entry)
-                y1_label_canvas = canvas1.create_window(155,entry1_spacing.get()*gap,window=y1_label)
-                y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get()*gap,window=y1_entry)
-                z1_label_canvas = canvas1.create_window(215,entry1_spacing.get()*gap,window=z1_label)
-                z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get()*gap,window=z1_entry)
-                t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get()*gap,window=t1checked_label)
-                t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get()*gap,window=t1checked_entry)
+                t1_label_canvas = canvas1.create_window(50,entry1_spacing.get(),window=t1_label)
+                t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get(),window=t1_entry)
+                x1_label_canvas = canvas1.create_window(95,entry1_spacing.get(),window=x1_label)
+                x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get(),window=x1_entry)
+                y1_label_canvas = canvas1.create_window(155,entry1_spacing.get(),window=y1_label)
+                y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get(),window=y1_entry)
+                z1_label_canvas = canvas1.create_window(215,entry1_spacing.get(),window=z1_label)
+                z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get(),window=z1_entry)
+                t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get(),window=t1checked_label)
+                t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get(),window=t1checked_entry)
                 t_1.set(1)
                 
                 if Times_On_Pages_To_Display.get() > 1:
-                    t2_label_canvas = canvas1.create_window(50,entry2_spacing.get()*gap,window=t2_label)
-                    t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get()*gap,window=t2_entry)
-                    x2_label_canvas = canvas1.create_window(95,entry2_spacing.get()*gap,window=x2_label)
-                    x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get()*gap,window=x2_entry)
-                    y2_label_canvas = canvas1.create_window(155,entry2_spacing.get()*gap,window=y2_label)
-                    y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get()*gap,window=y2_entry)
-                    z2_label_canvas = canvas1.create_window(215,entry2_spacing.get()*gap,window=z2_label)
-                    z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get()*gap,window=z2_entry)
-                    t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get()*gap,window=t2checked_label)
-                    t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get()*gap,window=t2checked_entry)
+                    t2_label_canvas = canvas1.create_window(50,entry2_spacing.get(),window=t2_label)
+                    t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get(),window=t2_entry)
+                    x2_label_canvas = canvas1.create_window(95,entry2_spacing.get(),window=x2_label)
+                    x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get(),window=x2_entry)
+                    y2_label_canvas = canvas1.create_window(155,entry2_spacing.get(),window=y2_label)
+                    y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get(),window=y2_entry)
+                    z2_label_canvas = canvas1.create_window(215,entry2_spacing.get(),window=z2_label)
+                    z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get(),window=z2_entry)
+                    t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get(),window=t2checked_label)
+                    t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get(),window=t2checked_entry)
                     t_2.set(2)
                 if Times_On_Pages_To_Display.get()>2:
-                    t3_label_canvas = canvas1.create_window(50,entry3_spacing.get()*gap,window=t3_label)
-                    t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get()*gap,window=t3_entry)
-                    x3_label_canvas = canvas1.create_window(95,entry3_spacing.get()*gap,window=x3_label)
-                    x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get()*gap,window=x3_entry)
-                    y3_label_canvas = canvas1.create_window(155,entry3_spacing.get()*gap,window=y3_label)
-                    y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get()*gap,window=y3_entry)
-                    z3_label_canvas = canvas1.create_window(215,entry3_spacing.get()*gap,window=z3_label)
-                    z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get()*gap,window=z3_entry)
-                    t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get()*gap,window=t3checked_label)
-                    t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get()*gap,window=t3checked_entry)
+                    t3_label_canvas = canvas1.create_window(50,entry3_spacing.get(),window=t3_label)
+                    t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get(),window=t3_entry)
+                    x3_label_canvas = canvas1.create_window(95,entry3_spacing.get(),window=x3_label)
+                    x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get(),window=x3_entry)
+                    y3_label_canvas = canvas1.create_window(155,entry3_spacing.get(),window=y3_label)
+                    y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get(),window=y3_entry)
+                    z3_label_canvas = canvas1.create_window(215,entry3_spacing.get(),window=z3_label)
+                    z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get(),window=z3_entry)
+                    t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get(),window=t3checked_label)
+                    t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get(),window=t3checked_entry)
                     t_3.set(3)
                 if Times_On_Pages_To_Display.get() >3:
-                    t4_label_canvas = canvas1.create_window(50,entry4_spacing.get()*gap,window=t4_label)
-                    t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get()*gap,window=t4_entry)
-                    x4_label_canvas = canvas1.create_window(95,entry4_spacing.get()*gap,window=x4_label)
-                    x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get()*gap,window=x4_entry)
-                    y4_label_canvas = canvas1.create_window(155,entry4_spacing.get()*gap,window=y4_label)
-                    y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get()*gap,window=y4_entry)
-                    z4_label_canvas = canvas1.create_window(215,entry4_spacing.get()*gap,window=z4_label)
-                    z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get()*gap,window=z4_entry)
-                    t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get()*gap,window=t4checked_label)
-                    t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get()*gap,window=t4checked_entry)
+                    t4_label_canvas = canvas1.create_window(50,entry4_spacing.get(),window=t4_label)
+                    t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get(),window=t4_entry)
+                    x4_label_canvas = canvas1.create_window(95,entry4_spacing.get(),window=x4_label)
+                    x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get(),window=x4_entry)
+                    y4_label_canvas = canvas1.create_window(155,entry4_spacing.get(),window=y4_label)
+                    y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get(),window=y4_entry)
+                    z4_label_canvas = canvas1.create_window(215,entry4_spacing.get(),window=z4_label)
+                    z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get(),window=z4_entry)
+                    t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get(),window=t4checked_label)
+                    t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get(),window=t4checked_entry)
                     t_4.set(4)
                 if Times_On_Pages_To_Display.get() >4:
-                    t5_label_canvas = canvas1.create_window(50,entry5_spacing.get()*gap,window=t5_label)
-                    t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get()*gap,window=t5_entry)
-                    x5_label_canvas = canvas1.create_window(95,entry5_spacing.get()*gap,window=x5_label)
-                    x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get()*gap,window=x5_entry)
-                    y5_label_canvas = canvas1.create_window(155,entry5_spacing.get()*gap,window=y5_label)
-                    y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get()*gap,window=y5_entry)
-                    z5_label_canvas = canvas1.create_window(215,entry5_spacing.get()*gap,window=z5_label)
-                    z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get()*gap,window=z5_entry)
-                    t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get()*gap,window=t5checked_label)
-                    t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get()*gap,window=t5checked_entry)
+                    t5_label_canvas = canvas1.create_window(50,entry5_spacing.get(),window=t5_label)
+                    t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get(),window=t5_entry)
+                    x5_label_canvas = canvas1.create_window(95,entry5_spacing.get(),window=x5_label)
+                    x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get(),window=x5_entry)
+                    y5_label_canvas = canvas1.create_window(155,entry5_spacing.get(),window=y5_label)
+                    y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get(),window=y5_entry)
+                    z5_label_canvas = canvas1.create_window(215,entry5_spacing.get(),window=z5_label)
+                    z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get(),window=z5_entry)
+                    t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get(),window=t5checked_label)
+                    t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get(),window=t5checked_entry)
                     t_5.set(5)
-        if Organized_Files_Done.get() == 1:
+                    
+            global time_displayed
+            time_displayed = 0
+            global Entry_Tracked
+            Entry_Tracked = 0
+            global Folder_Z_Values
+            Folder_Z_Values = np.arange(-50,60,10)
+            
+            matplotlib.rcParams['toolbar'] = 'None'
+            global ax
+            fig, ax = plt.subplots(1,1,figsize=(5,5),dpi=160,tight_layout=True)
+            asdf = int(Times_of_Interest.get())*100000
+            global X
+            X = np.random.normal(loc=0,scale=0.5,size=asdf)
+            X = X.reshape((int(Times_of_Interest.get()),100,100,10))
+            global tracker
+            tracker = IndexTracker(ax,X,Folder_Z_Values,time_displayed,Entry_Tracked)
+            fig.canvas.mpl_connect('scroll_event', tracker.onscroll)
+            fig.canvas.mpl_connect('button_press_event', tracker.onclick)
+            fig.canvas.mpl_connect('key_press_event',tracker.time_swap)
+            fig.canvas.mpl_connect('key_release_event', tracker.on_key_release)
+            thismanager = plt.get_current_fig_manager()
+            plt.show()
+        '''
+        if Input_Stack_Format.get() == 1 or Input_Hyperstack_Format.get() == 1:
+            if Derivative_Check_Variable.get() == 0:
+                global Organized_Files
+                Organized_Files = Organize_Folders()
+                global shape_of_arrays_0,shape_of_arrays_1
+                shape_of_arrays_0,shape_of_arrays_1 = np.array(io.imread(Organized_Files[0,0])).shape
+                Phase_T = np.zeros((int(Times_of_Interest.get()),Organized_Files.shape[0],shape_of_arrays_0,shape_of_arrays_1),'<f4')
+                for t_slice in range(int(Times_of_Interest.get())):
+                    print(f'Building time slice #{t_slice+1} out of {int(Times_of_Interest.get())} ({np.round(timeit.default_timer() - begin_timer,3)} seconds)')
+                    Phase_T_slice = np.zeros((Organized_Files.shape[0],shape_of_arrays_0,shape_of_arrays_1))
+                    for z_slice in range(Organized_Files.shape[0]):
+                        Phase_T_slice[z_slice,:,:] = np.array(io.imread(Organized_Files[z_slice,t_slice]),'<f4')*100
+                    Phase_T[t_slice,:,:,:] = np.copy(Phase_T_slice)
+            if Derivative_Check_Variable.get() == 1:
+                Derivative_Image_Array = np.array(io.imread(Derivative_Input_File_Name.get()))
+            
+            created_list = 0
+            if created_list == 0:
+                created_list = 1
+                global Particle_Locations
+                Particle_Locations = np.zeros((int(Number_Of_Particles_To_Track.get()),int(Times_of_Interest.get()),5))
+                Particle_Locations[:,:,0] = np.arange(int(Times_of_Interest.get()))+1
+                Total_Pages.set(np.ceil(int(Times_of_Interest.get())/5))
+                
+            
+            display_show = True
+            if display_show:
+                Times_On_Pages_To_Display.set(int(int(Times_of_Interest.get())-First_Time_Entry_Displayed.get()+1))
+                
+                
+                if Times_On_Pages_To_Display.get()>5:
+                    Left_Arrow_Button_Canvas = canvas1.create_window(100,arrows_jumping_spacing.get(),window=Left_Arrow_Button)
+                    Right_Arrow_Button_Canvas = canvas1.create_window(200,arrows_jumping_spacing.get(),window=Right_Arrow_Button)
+                
+                    jump_to_label_canvas = canvas1.create_window(275,arrows_jumping_spacing.get(),window=jump_to_label)
+                    jump_to_entry_canvas = canvas1.create_window(345,arrows_jumping_spacing.get(),window=jump_to_entry)
+                if Times_On_Pages_To_Display.get()<6:
+                    entry1_spacing.set(entry1_spacing.get()-1)
+                    entry2_spacing.set(entry2_spacing.get()-1)
+                    entry3_spacing.set(entry3_spacing.get()-1)
+                    entry4_spacing.set(entry4_spacing.get()-1)
+                    entry5_spacing.set(entry5_spacing.get()-1)
+                    save_location_missing_spacing.set(save_location_missing_spacing.get()-1)
+                if int(Number_Of_Particles_To_Track.get()) > 1:
+                    Particle_Focus_Menu_Function()
+                    
+                Auto_Contrast_Button_Canvas = canvas1.create_window(200,open_window_spacing.get(),window=Auto_Contrast_Button)
+                #Contrast_Adjust_Button_Canvas = canvas1.create_window(300,open_window_spacing.get(),window=Contrast_Adjust_Button)
+                Contrast_Adjust_Checkbox_Button_Canvas = canvas1.create_window(350,open_window_spacing.get(),window=Contrast_Adjust_Checkbox_Button)
+                
+                missing_entries_label_canvas = canvas1.create_window(100,save_location_missing_spacing.get(),window=missing_entries_label)
+                Missing_Entries_Entry_Canvas = canvas1.create_window(170,save_location_missing_spacing.get(),window=Missing_Entries_Entry)
+                x_coordinate_label_canvas = canvas1.create_window(60,x_input_spacing.get(),window=x_coordinate_label)
+                X_Coordinate_Entry_entry_canvas = canvas1.create_window(225,x_input_spacing.get(),window=X_Coordinate_Entry)
+                y_coordinate_label_Canvas = canvas1.create_window(60,y_input_spacing.get(),window=y_coordinate_label)
+                Y_Coordinate_Entry_canvas = canvas1.create_window(225,y_input_spacing.get(),window=Y_Coordinate_Entry)
+                append_next_Button_Canvas = canvas1.create_window(120,set_val_spacing.get(),window=append_next_Button)
+                Save_Output_Button_Canvas = canvas1.create_window(250,save_location_missing_spacing.get(),window=Save_Output_Button)
+                
+                t1_label_canvas = canvas1.create_window(50,entry1_spacing.get(),window=t1_label)
+                t1_entry_canvas = canvas1.create_window(75,entry1_spacing.get(),window=t1_entry)
+                x1_label_canvas = canvas1.create_window(95,entry1_spacing.get(),window=x1_label)
+                x1_entry_canvas = canvas1.create_window(125,entry1_spacing.get(),window=x1_entry)
+                y1_label_canvas = canvas1.create_window(155,entry1_spacing.get(),window=y1_label)
+                y1_entry_canvas = canvas1.create_window(185,entry1_spacing.get(),window=y1_entry)
+                z1_label_canvas = canvas1.create_window(215,entry1_spacing.get(),window=z1_label)
+                z1_entry_canvas = canvas1.create_window(245,entry1_spacing.get(),window=z1_entry)
+                t1checked_label_canvas = canvas1.create_window(295,entry1_spacing.get(),window=t1checked_label)
+                t1checked_entry_canvas = canvas1.create_window(345,entry1_spacing.get(),window=t1checked_entry)
+                t_1.set(1)
+                
+                if Times_On_Pages_To_Display.get() > 1:
+                    t2_label_canvas = canvas1.create_window(50,entry2_spacing.get(),window=t2_label)
+                    t2_entry_canvas = canvas1.create_window(75,entry2_spacing.get(),window=t2_entry)
+                    x2_label_canvas = canvas1.create_window(95,entry2_spacing.get(),window=x2_label)
+                    x2_entry_canvas = canvas1.create_window(125,entry2_spacing.get(),window=x2_entry)
+                    y2_label_canvas = canvas1.create_window(155,entry2_spacing.get(),window=y2_label)
+                    y2_entry_canvas = canvas1.create_window(185,entry2_spacing.get(),window=y2_entry)
+                    z2_label_canvas = canvas1.create_window(215,entry2_spacing.get(),window=z2_label)
+                    z2_entry_canvas = canvas1.create_window(245,entry2_spacing.get(),window=z2_entry)
+                    t2checked_label_canvas = canvas1.create_window(295,entry2_spacing.get(),window=t2checked_label)
+                    t2checked_entry_canvas = canvas1.create_window(345,entry2_spacing.get(),window=t2checked_entry)
+                    t_2.set(2)
+                if Times_On_Pages_To_Display.get()>2:
+                    t3_label_canvas = canvas1.create_window(50,entry3_spacing.get(),window=t3_label)
+                    t3_entry_canvas = canvas1.create_window(75,entry3_spacing.get(),window=t3_entry)
+                    x3_label_canvas = canvas1.create_window(95,entry3_spacing.get(),window=x3_label)
+                    x3_entry_canvas = canvas1.create_window(125,entry3_spacing.get(),window=x3_entry)
+                    y3_label_canvas = canvas1.create_window(155,entry3_spacing.get(),window=y3_label)
+                    y3_entry_canvas = canvas1.create_window(185,entry3_spacing.get(),window=y3_entry)
+                    z3_label_canvas = canvas1.create_window(215,entry3_spacing.get(),window=z3_label)
+                    z3_entry_canvas = canvas1.create_window(245,entry3_spacing.get(),window=z3_entry)
+                    t3checked_label_canvas = canvas1.create_window(295,entry3_spacing.get(),window=t3checked_label)
+                    t3checked_entry_canvas = canvas1.create_window(345,entry3_spacing.get(),window=t3checked_entry)
+                    t_3.set(3)
+                if Times_On_Pages_To_Display.get() >3:
+                    t4_label_canvas = canvas1.create_window(50,entry4_spacing.get(),window=t4_label)
+                    t4_entry_canvas = canvas1.create_window(75,entry4_spacing.get(),window=t4_entry)
+                    x4_label_canvas = canvas1.create_window(95,entry4_spacing.get(),window=x4_label)
+                    x4_entry_canvas = canvas1.create_window(125,entry4_spacing.get(),window=x4_entry)
+                    y4_label_canvas = canvas1.create_window(155,entry4_spacing.get(),window=y4_label)
+                    y4_entry_canvas = canvas1.create_window(185,entry4_spacing.get(),window=y4_entry)
+                    z4_label_canvas = canvas1.create_window(215,entry4_spacing.get(),window=z4_label)
+                    z4_entry_canvas = canvas1.create_window(245,entry4_spacing.get(),window=z4_entry)
+                    t4checked_label_canvas = canvas1.create_window(295,entry4_spacing.get(),window=t4checked_label)
+                    t4checked_entry_canvas = canvas1.create_window(345,entry4_spacing.get(),window=t4checked_entry)
+                    t_4.set(4)
+                if Times_On_Pages_To_Display.get() >4:
+                    t5_label_canvas = canvas1.create_window(50,entry5_spacing.get(),window=t5_label)
+                    t5_entry_canvas = canvas1.create_window(75,entry5_spacing.get(),window=t5_entry)
+                    x5_label_canvas = canvas1.create_window(95,entry5_spacing.get(),window=x5_label)
+                    x5_entry_canvas = canvas1.create_window(125,entry5_spacing.get(),window=x5_entry)
+                    y5_label_canvas = canvas1.create_window(155,entry5_spacing.get(),window=y5_label)
+                    y5_entry_canvas = canvas1.create_window(185,entry5_spacing.get(),window=y5_entry)
+                    z5_label_canvas = canvas1.create_window(215,entry5_spacing.get(),window=z5_label)
+                    z5_entry_canvas = canvas1.create_window(245,entry5_spacing.get(),window=z5_entry)
+                    t5checked_label_canvas = canvas1.create_window(295,entry5_spacing.get(),window=t5checked_label)
+                    t5checked_entry_canvas = canvas1.create_window(345,entry5_spacing.get(),window=t5checked_entry)
+                    t_5.set(5)
             global time_displayed
             time_displayed = 0
             global Entry_Tracked
@@ -759,6 +887,7 @@ if __name__ == '__main__':
             fig.canvas.mpl_connect('key_release_event', tracker.on_key_release)
             thismanager = plt.get_current_fig_manager()
             plt.show()
+            '''
 
     def Append_List():
         Z_Location.set(str(Z_Slice_Present))
@@ -812,25 +941,13 @@ if __name__ == '__main__':
                 Derivative_Input_File_Name.set('(Required)')
 
     def Move_Left():
-        moved = 0
-        if moved == 0:
-            if First_Time_Entry_Displayed.get() == 1:
-                First_Time_Entry_Displayed.set(int(Times_of_Interest.get()) - (int(Times_of_Interest.get()) % 5) + 1)
-                moved = 1
-        if moved == 0:
-            if First_Time_Entry_Displayed.get() != 1:
-                First_Time_Entry_Displayed.set(First_Time_Entry_Displayed.get()-5)
+        Page_Viewing.set((Page_Viewing.get()-1) % (Total_Pages.get()))
+        First_Time_Entry_Displayed.set((Page_Viewing.get())*5+1)
         Move_Page()
 
     def Move_Right():
-        moved = 0
-        if moved == 0:
-            if First_Time_Entry_Displayed.get() == int(Times_of_Interest.get()) - (int(Times_of_Interest.get()) % 5) + 1:
-                First_Time_Entry_Displayed.set(1)
-                moved = 1
-        if moved == 0:
-            if First_Time_Entry_Displayed.get() != int(Times_of_Interest.get()) - (int(Times_of_Interest.get()) % 5) + 1:
-                First_Time_Entry_Displayed.set(First_Time_Entry_Displayed.get()+5)
+        Page_Viewing.set((Page_Viewing.get()+1) % (Total_Pages.get()))
+        First_Time_Entry_Displayed.set((Page_Viewing.get())*5+1)
         Move_Page()
 
     def End_Time_Changed(*args):
@@ -848,11 +965,20 @@ if __name__ == '__main__':
         except ValueError:
             pass
         else:
-            if int(jump_to_value.get())%5 == 0:
-                First_Time_Entry_Displayed.set(int(jump_to_value.get())-4)
-            if int(jump_to_value.get())%5 != 0:
-                First_Time_Entry_Displayed.set(int(jump_to_value.get())-(int(jump_to_value.get())%5)+1)
+            if 0<np.ceil(int(jump_to_value.get())/5)<=Total_Pages.get():
+                Page_Viewing.set(np.ceil(int(jump_to_value.get())/5))
+                First_Time_Entry_Displayed.set((Page_Viewing.get()-1)*5+1)
+            if np.ceil(int(jump_to_value.get())/5)>Total_Pages.get():
+                jump_to_value.set(Times_of_Interest.get())
+                Page_Viewing.set(Total_Pages.get())
+                First_Time_Entry_Displayed.set((Page_Viewing.get()-1)*5+1)
+            if np.ceil(int(jump_to_value.get())/5)<1:
+                jump_to_value.set(1)
+                Page_Viewing.set(0)
+                First_Time_Entry_Displayed.set(1)
+            root.update()
             Move_Page()
+                
 
     def Finished_Check():
         if np.count_nonzero(Particle_Locations[:,:,4]==0)!=0:
@@ -920,17 +1046,17 @@ if __name__ == '__main__':
         Time_Stamp_Array_Times_of_Interest = Time_Stamp_Array[Initial_Time_Point_Speeds.get()-1:Initial_Time_Point_Speeds.get()+int(Times_of_Interest.get())-1]
     
     def Z_Input_Display(*args):
-        Z_Resolution_Label_Canvas = canvas1.create_window(425,particle_number_spacing.get()*gap,window=Z_Resolution_Label)
-        Z_Resolution_Entry_Canvas = canvas1.create_window(485,particle_number_spacing.get()*gap,window=Z_Resolution_Entry)
-        Z_Starting_Point_Label_Canvas = canvas1.create_window(575,particle_number_spacing.get()*gap,window=Z_Starting_Point_Label)
-        Z_Starting_Point_Entry_Canvas = canvas1.create_window(655,particle_number_spacing.get()*gap,window=Z_Starting_Point_Entry)
+        Z_Resolution_Label_Canvas = canvas1.create_window(425,particle_number_spacing.get(),window=Z_Resolution_Label)
+        Z_Resolution_Entry_Canvas = canvas1.create_window(485,particle_number_spacing.get(),window=Z_Resolution_Entry)
+        Z_Starting_Point_Label_Canvas = canvas1.create_window(575,particle_number_spacing.get(),window=Z_Starting_Point_Label)
+        Z_Starting_Point_Entry_Canvas = canvas1.create_window(655,particle_number_spacing.get(),window=Z_Starting_Point_Entry)
         
-        Input_Directory_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get()*gap,window=Input_Directory_Button)
-        Input_Directory_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get()*gap,window=Input_Directory_Entry)
+        Input_Directory_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get(),window=Input_Directory_Button)
+        Input_Directory_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get(),window=Input_Directory_Entry)
         canvas1.delete(Input_Directory_Button_Canvas)
         canvas1.delete(Input_Directory_Entry_Canvas)
-        Input_Derivative_File_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get()*gap,window=Input_Derivative_File_Button)
-        Derivative_File_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get()*gap,window=Derivative_File_Entry)
+        Input_Derivative_File_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get(),window=Input_Derivative_File_Button)
+        Derivative_File_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get(),window=Derivative_File_Entry)
         canvas1.delete(Input_Derivative_File_Button_Canvas)
         canvas1.delete(Derivative_File_Entry_Canvas)
         
@@ -939,11 +1065,11 @@ if __name__ == '__main__':
             canvas1.delete(Z_Resolution_Entry_Canvas)
             canvas1.delete(Z_Starting_Point_Label_Canvas)
             canvas1.delete(Z_Starting_Point_Entry_Canvas)
-            Input_Directory_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get()*gap,window=Input_Directory_Button)
-            Input_Directory_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get()*gap,window=Input_Directory_Entry)
+            Input_Directory_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get(),window=Input_Directory_Button)
+            Input_Directory_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get(),window=Input_Directory_Entry)
         if Derivative_Check_Variable.get() == 1:
-            Input_Derivative_File_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get()*gap,window=Input_Derivative_File_Button)
-            Derivative_File_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get()*gap,window=Derivative_File_Entry)
+            Input_Derivative_File_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get(),window=Input_Derivative_File_Button)
+            Derivative_File_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get(),window=Derivative_File_Entry)
 
     def Stall(*args):
         if Initiated_Contrast_Check.get() == 1:
@@ -1055,7 +1181,31 @@ if __name__ == '__main__':
         Applying_Update()
         
         tracker.update()
-
+    def Select_Input_Format_Stack(*args):
+        Input_Format_Change_Processed = False
+        if Input_Format_Changed_Check.get() == 1:
+            Input_Format_Change_Processed = True
+        if Input_Format_Changed_Check.get() == 0:
+            Input_Format_Changed_Check.set(1)
+            Input_Stack_Format.set(1)
+            Input_Hyperstack_Format.set(0)
+        if Input_Format_Change_Processed == True:
+            Input_Format_Change_Processed = False
+            Input_Format_Changed_Check.set(0)
+        
+    def Select_Input_Format_Hyperstack(*args):
+        Input_Format_Change_Processed = False
+        if Input_Format_Changed_Check.get() == 1:
+            Input_Format_Change_Processed = True
+        if Input_Format_Changed_Check.get() == 0:
+            Input_Format_Changed_Check.set(1)
+            Input_Stack_Format.set(0)
+            Input_Hyperstack_Format.set(1)
+        if Input_Format_Change_Processed == True:
+            Input_Format_Change_Processed = False
+            Input_Format_Changed_Check.set(0)
+        
+    
         
     Variable_Minimize = 0
     if Variable_Minimize == 0:
@@ -1065,7 +1215,7 @@ if __name__ == '__main__':
         X_Coordinate = IntVar()
         Y_Coordinate = IntVar()
         Times_of_Interest = StringVar()
-        Times_of_Interest.set('1')
+        Times_of_Interest.set('20')
         Times_of_Interest.trace('w',End_Time_Changed)
         Input_Directory_Text = StringVar()
         Input_Directory_Text.set('(Required)')
@@ -1087,26 +1237,12 @@ if __name__ == '__main__':
         Times_On_Pages_To_Display = IntVar()
         Missing_Entries = IntVar()
         Missing_Entries.set(int(Times_of_Interest.get()))
-        starttimes_spacing,timestamp_spacing,input_dir_spacing,derivative_check_spacing,particle_number_spacing,open_window_spacing,x_input_spacing,y_input_spacing,set_val_spacing,arrows_jumping_spacing,entry1_spacing,entry2_spacing,entry3_spacing,entry4_spacing,entry5_spacing,save_location_missing_spacing = IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar()
-        starttimes_spacing.set(1)
-        timestamp_spacing.set(starttimes_spacing.get()+1)
-        input_dir_spacing.set(timestamp_spacing.get()+1)
-        derivative_check_spacing.set(input_dir_spacing.get()+1)
-        particle_number_spacing.set(derivative_check_spacing.get()+1)
-        open_window_spacing.set(particle_number_spacing.get()+1)
-        x_input_spacing.set(open_window_spacing.get()+1)
-        y_input_spacing.set(x_input_spacing.get()+1)
-        set_val_spacing.set(y_input_spacing.get()+1)
-        arrows_jumping_spacing.set(set_val_spacing.get()+1)
-        entry1_spacing.set(arrows_jumping_spacing.get()+1)
-        entry2_spacing.set(entry1_spacing.get()+1)
-        entry3_spacing.set(entry2_spacing.get()+1)
-        entry4_spacing.set(entry3_spacing.get()+1)
-        entry5_spacing.set(entry4_spacing.get()+1)
-        save_location_missing_spacing.set(entry5_spacing.get()+1)
+        starttimes_spacing,timestamp_spacing,input_dir_spacing,derivative_check_spacing,particle_number_spacing,open_window_spacing,x_input_spacing,y_input_spacing,set_val_spacing,arrows_jumping_spacing,entry1_spacing,entry2_spacing,entry3_spacing,entry4_spacing,entry5_spacing,save_location_missing_spacing,Stack_vs_Hyperstack_Spacing = IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar(),IntVar()
+        
+        
         Launched_Window = IntVar()
         jump_to_value = StringVar()
-        jump_to_value.set('0')
+        jump_to_value.set('1')
         jump_to_value.trace('w',Jump_To_Entry)
         Number_Of_Particles_To_Track = StringVar()
         Number_Of_Particles_To_Track.set('1')
@@ -1155,6 +1291,14 @@ if __name__ == '__main__':
         Upper_Contrast_Value.trace('w',Stall)
         Auto_Contrast_Pressed = IntVar()
         Initiated_Contrast_Check = IntVar()
+        Total_Pages = IntVar()
+        Page_Viewing = IntVar()
+        Input_Stack_Format = IntVar()
+        Input_Stack_Format.set(1)
+        Input_Stack_Format.trace('w',Select_Input_Format_Stack)
+        Input_Hyperstack_Format = IntVar()
+        Input_Hyperstack_Format.trace('w',Select_Input_Format_Hyperstack)
+        Input_Format_Changed_Check = IntVar()
         
     Label_Minimize = 0
     if Label_Minimize == 0:
@@ -1180,6 +1324,7 @@ if __name__ == '__main__':
         Apply_Update_Notice_Label = Label(root,text='Applying Update, Please Wait...')
         #Apply_Update_Finished_Label = Label(root,text='Finished Updating')
         Opening_Contrast_Window_Label = Label(root,text='Opening Contrast Popup, Please Wait')
+        Input_Stack_vs_Hyperstack_Label = Label(root,text='Input Format:')
     
     Entry_Minimize = 0
     if Entry_Minimize == 0:
@@ -1232,30 +1377,54 @@ if __name__ == '__main__':
         Contrast_Adjust_Button = Button(root,text='Contrast',command=Contrast_Popup)
         Contrast_Adjust_Checkbox_Button = Checkbutton(root,text="Apply Contrast Adjustment",variable=Contrast_Button_Checkbox_value)
         Auto_Contrast_Button = Button(root,text='Auto Contrast',command=Auto_Contrast)
+        Input_Stack_Format_Checkbox = Checkbutton(root,text='Stack',variable=Input_Stack_Format)
+        Input_Hyperstack_Format_Checkbox = Checkbutton(root,text='Hyperstack',variable=Input_Hyperstack_Format)
         
     
     Canvas_Minimize = 0
     if Canvas_Minimize == 0:
         gap = 28
+        starttimes_spacing.set(gap)
+        timestamp_spacing.set((starttimes_spacing.get()/gap+1)*gap)
+        input_dir_spacing.set((timestamp_spacing.get()/gap+1)*gap)
+        Stack_vs_Hyperstack_Spacing.set((input_dir_spacing.get()/gap+1)*gap)
+        derivative_check_spacing.set((Stack_vs_Hyperstack_Spacing.get()/gap+1)*gap)
+        particle_number_spacing.set((derivative_check_spacing.get()/gap+1)*gap)
+        open_window_spacing.set((particle_number_spacing.get()/gap+1)*gap)
+        x_input_spacing.set((open_window_spacing.get()/gap+1)*gap)
+        y_input_spacing.set((x_input_spacing.get()/gap+1)*gap)
+        set_val_spacing.set((y_input_spacing.get()/gap+1)*gap)
+        arrows_jumping_spacing.set((set_val_spacing.get()/gap+1)*gap)
+        entry1_spacing.set((arrows_jumping_spacing.get()/gap+1)*gap)
+        entry2_spacing.set((entry1_spacing.get()/gap+1)*gap)
+        entry3_spacing.set((entry2_spacing.get()/gap+1)*gap)
+        entry4_spacing.set((entry3_spacing.get()/gap+1)*gap)
+        entry5_spacing.set((entry4_spacing.get()/gap+1)*gap)
+        save_location_missing_spacing.set((entry5_spacing.get()/gap+1)*gap)
        
-        Times_of_Interest_Label_Canvas = canvas1.create_window(75,starttimes_spacing.get()*gap,window=Times_of_Interest_Label)
-        Times_of_Interest_Entry_Canvas = canvas1.create_window(185,starttimes_spacing.get()*gap,window=Times_of_Interest_Entry)
-        Initial_Time_Point_Speeds_Label_Canvas = canvas1.create_window(425,timestamp_spacing.get()*gap,window=Initial_Time_Point_Speeds_Label)
-        Initial_Time_Point_Speeds_Entry_Canvas = canvas1.create_window(520,timestamp_spacing.get()*gap,window=Initial_Time_Point_Speeds_Entry)
-        TimeStamp_Text_File_Button_Canvas = canvas1.create_window(75,timestamp_spacing.get()*gap,window=TimeStamp_Text_File_Button)
-        TimeStamp_Text_File_Entry_Canvas = canvas1.create_window(230,timestamp_spacing.get()*gap,window=TimeStamp_Text_File_Entry)
-        Input_Directory_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get()*gap,window=Input_Directory_Button)
-        Input_Directory_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get()*gap,window=Input_Directory_Entry)
-        Derivative_Check_Button_Canvas = canvas1.create_window(300,derivative_check_spacing.get()*gap,window=Derivative_Check_Button)
-        Number_Of_Particles_To_Track_Label_Canvas = canvas1.create_window(85,particle_number_spacing.get()*gap,window=Number_Of_Particles_To_Track_Label)
-        Number_Of_Particles_To_Track_Entry_Canvas = canvas1.create_window(185,particle_number_spacing.get()*gap,window=Number_Of_Particles_To_Track_Entry)
-        XY_Resolution_Label_Canvas = canvas1.create_window(280,particle_number_spacing.get()*gap,window=XY_Resolution_Label)
-        XY_Resolution_Entry_Canvas = canvas1.create_window(350,particle_number_spacing.get()*gap,window=XY_Resolution_Entry)
-        Open_Window_Button_Canvas = canvas1.create_window(75,open_window_spacing.get()*gap,window=Open_Window_Button)
+        Times_of_Interest_Label_Canvas = canvas1.create_window(75,starttimes_spacing.get(),window=Times_of_Interest_Label)
+        Times_of_Interest_Entry_Canvas = canvas1.create_window(185,starttimes_spacing.get(),window=Times_of_Interest_Entry)
+        Initial_Time_Point_Speeds_Label_Canvas = canvas1.create_window(425,timestamp_spacing.get(),window=Initial_Time_Point_Speeds_Label)
+        Initial_Time_Point_Speeds_Entry_Canvas = canvas1.create_window(520,timestamp_spacing.get(),window=Initial_Time_Point_Speeds_Entry)
+        TimeStamp_Text_File_Button_Canvas = canvas1.create_window(75,timestamp_spacing.get(),window=TimeStamp_Text_File_Button)
+        TimeStamp_Text_File_Entry_Canvas = canvas1.create_window(230,timestamp_spacing.get(),window=TimeStamp_Text_File_Entry)
+        Input_Directory_Button_Canvas = canvas1.create_window(75,input_dir_spacing.get(),window=Input_Directory_Button)
+        Input_Directory_Entry_Canvas = canvas1.create_window(431,input_dir_spacing.get(),window=Input_Directory_Entry)
+        Input_Stack_vs_Hyperstack_Label_Canvas = canvas1.create_window(75,Stack_vs_Hyperstack_Spacing.get(),window=Input_Stack_vs_Hyperstack_Label)
+        Input_Stack_Format_Checkbox_Canvas = canvas1.create_window(185,Stack_vs_Hyperstack_Spacing.get(),window=Input_Stack_Format_Checkbox)
+        Input_Hyperstack_Format_Checkbox_Canvas = canvas1.create_window(295,Stack_vs_Hyperstack_Spacing.get(),window=Input_Hyperstack_Format_Checkbox)
+        Derivative_Check_Button_Canvas = canvas1.create_window(300,derivative_check_spacing.get(),window=Derivative_Check_Button)
+        Number_Of_Particles_To_Track_Label_Canvas = canvas1.create_window(85,particle_number_spacing.get(),window=Number_Of_Particles_To_Track_Label)
+        Number_Of_Particles_To_Track_Entry_Canvas = canvas1.create_window(185,particle_number_spacing.get(),window=Number_Of_Particles_To_Track_Entry)
+        XY_Resolution_Label_Canvas = canvas1.create_window(280,particle_number_spacing.get(),window=XY_Resolution_Label)
+        XY_Resolution_Entry_Canvas = canvas1.create_window(350,particle_number_spacing.get(),window=XY_Resolution_Entry)
+        Open_Window_Button_Canvas = canvas1.create_window(75,open_window_spacing.get(),window=Open_Window_Button)
+    
+    
     
     root.title("Tkinter window")
     w = 750 # width for the Tk root
-    h = (save_location_missing_spacing.get()+1)*gap # height for the Tk root
+    h = ((save_location_missing_spacing.get()/gap+1)*gap) # height for the Tk root
     ws = root.winfo_screenwidth() # width of the screen
     hs = root.winfo_screenheight() # height of the screen
     x = (ws/5) - (w/2)
